@@ -6,10 +6,10 @@
 import * as arrayUtils from './utils/arrayUtils';
 import clone from 'clone';
 
-// Set constants for number of possible cup swaps
+// Set constants for number of possible cup swap and cup element indexes
 const MIN_SWAPS = 10;
 const MAX_SWAPS = 20;
-const CUP_ELEMENTS = [1, 2, 3];
+const CUP_INDEXES = [1, 2, 3];
 
 
 class CupShuffler extends Object {
@@ -35,8 +35,8 @@ class CupShuffler extends Object {
   }
 
   swapRandomCups () {
-    let shuffledItems = arrayUtils.shuffle(clone(CUP_ELEMENTS));
-    arrayUtils.swapElements(this.cups, shuffledItems[0], shuffledItems[1]);
+    let shuffledIndexes = arrayUtils.shuffle(clone(CUP_INDEXES));
+    arrayUtils.swapElements(this.cups, shuffledIndexes[0], shuffledIndexes[1]);
   }
 
 };
