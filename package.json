@@ -1,0 +1,17 @@
+{
+  "name": "gameofshells",
+  "version": "1.0.0",
+  "description": "Classic three cups game",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify assets/js/main.js -t  babelify -d -o  bundle.js"
+  },
+  "author": "Gabe Hernandez",
+  "license": "MIT",
+  "devDependencies": {
+    "babelify": "^6.3.0"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
+  }
+}
