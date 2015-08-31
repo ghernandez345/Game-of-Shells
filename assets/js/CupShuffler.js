@@ -1,5 +1,5 @@
 /**
- * The Game Suffler handles the generation of the different states
+ * The Game Suffler handles the generation of the different moves
  * of the game.
  */
 
