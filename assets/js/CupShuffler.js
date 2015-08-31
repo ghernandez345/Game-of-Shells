@@ -19,21 +19,41 @@ class CupShuffler extends Object {
     this.cups = [1, 2, 3];
   }
 
-  startNewGame () {
+  /**
+   * Resets the cups back to their original state and starts
+   * shuffling them.
+   */
+
+  /**
+   * Resets the cups back to their original state and starts
+   * shuffling them.
+   * @param  {Function} callback - callback called with data of the games moves.
+   */
+  startNewGame (callback) {
     this.cups = [1, 2, 3];
-    this.shuffleCups();
+    let moves = this.shuffleCups();
+    callback(moves);
   }
 
+  /**
+   * Does a series of shuffles and builds an array of the moves that occured.
+   * @return {Array} - Array of the shuffle moves that occcured.
+   */
   shuffleCups () {
-    let shuffles = [];
+
+    let shuffledMoves = [];
     for (var i = 0; i < 10; i++) {
       this.swapRandomCups();
-      shuffles.push(clone(this.cups));
+      shuffledMoves.push(clone(this.cups));
     }
 
-    console.log(shuffles);
+    // Run callback passing shuffled moves.
+    return shuffledMoves;
   }
 
+  /**
+   * Will shuffle the two random cups.
+   */
   swapRandomCups () {
     let shuffledIndexes = arrayUtils.shuffle(clone(CUP_INDEXES));
     arrayUtils.swapElements(this.cups, shuffledIndexes[0], shuffledIndexes[1]);
