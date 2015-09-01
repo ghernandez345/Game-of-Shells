@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import CupComponent from './CupComponent';
+import CupRowComponent from './CupRowComponent';
 import CupShuffler from '../CupShuffler';
 
 
@@ -18,6 +18,9 @@ class GameComponent extends React.Component {
   constructor () {
     super();
     this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      cupOrder: cupShuffler.getInitialCupOrder()
+    }
   }
 
   handleClick (e) {
@@ -29,7 +32,9 @@ class GameComponent extends React.Component {
   startGameTimer (moves) {
     let stepCount = 0;
     let gameTimer = setInterval(() => {
-      console.log(moves[stepCount]);
+      this.setState({
+        cupOrder: moves[stepCount]
+      });
       stepCount++;
       if (stepCount === moves.length) {
         clearInterval(gameTimer);
@@ -37,17 +42,17 @@ class GameComponent extends React.Component {
     }, SHUFFLE_TIMER);
   }
 
+
   render () {
+
     return (
       <div>
         <button onClick={this.handleClick}>Start Game</button>
-
-        <CupComponent />
-        <CupComponent />
-        <CupComponent />
+        <CupRowComponent cupOrder={this.state.cupOrder} />
       </div>
     );
   }
+
 };
 
 export default GameComponent;

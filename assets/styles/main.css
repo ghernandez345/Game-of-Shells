@@ -1,0 +1,45 @@
+/**
+ * Main css styles. We handle animation here.
+ */
+
+.cup-row {
+  margin: 100px auto;
+  position: relative;
+  width: 500px;
+}
+
+.cup-component {
+  border: 2px solid black;
+  position: absolute;
+
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 1s, transform 1s;
+}
+
+.cup-component:hover {
+  cursor: pointer;
+}
+
+.position-1 {
+  left: 0;
+  background-color: red;
+
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 1s, transform 1s;
+}
+
+.position-1 {
+  left: 50%;
+  background-color: green;
+
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 1s, transform 1s;
+}
+
+.position-3 {
+  left: 100%;
+  background-color: blue;
+
+  -webkit-transition: all 1s, -webkit-transform 1s;
+  transition: all 1s, transform 1s;
+}
