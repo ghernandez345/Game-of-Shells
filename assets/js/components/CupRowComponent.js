@@ -1,5 +1,6 @@
 /**
- * Cup Row Component manages the list of cup components
+ * Cup Row Component manages the list of cup components. It will
+ * pass the appropriate position to each cup.
  */
 
 import React from 'react';
@@ -25,7 +26,11 @@ class CupRowComponent extends React.Component {
     );
   }
 
-
+  /**
+   * Will map react components based off our cup positions array.
+   * @param  {Array} cupPositions - Array of the positions of the cups.
+   * @return {Array}              - Array of React components to render.
+   */
   mapCupPositions (cupPositions) {
     return cupPositions.map((position, cup) => {
       return (

@@ -1,5 +1,5 @@
 /**
- * Ball component simply renders a ball at the specific location
+ * Ball component simply renders a ball at a specific position.
  */
 
 import React from 'react';

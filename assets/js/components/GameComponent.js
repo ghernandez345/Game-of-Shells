@@ -12,7 +12,7 @@ import MessageComponent from './MessageComponent';
 
 // game timers.
 const SHUFFLE_TIMER = 350;
-const GAME_START_DELAY = 800;
+const GAME_START_DELAY = 1300;
 
 // We will use this instance to generate our game moves.
 var cupShuffler = new CupShuffler();
@@ -44,7 +44,8 @@ class GameComponent extends React.Component {
   }
 
   /**
-   * Starts the game and performs cup shuffling after a delay.
+   * Starts the game and performs cup shuffling after a delay for the player
+   * to get ready.
    * @param  {Array} moves - Array of the suffling moves.
    */
   startGame (moves) {
@@ -75,9 +76,9 @@ class GameComponent extends React.Component {
         cupPositions: moves[stepCount]
       });
 
-      // clear out the interval when we have gone through
-      // all the moves. We also set the ball position to position
-      // of whichever cup is at index 0.
+      // Clear out the interval when we have gone through
+      // all the moves. We also set the ball position to the position
+      // of cup 0.
       stepCount++;
       if (stepCount === moves.length) {
         this.setState({
@@ -106,7 +107,7 @@ class GameComponent extends React.Component {
 
   /**
    * End game handler that sets the end game state based on a win or
-   * a loss.
+   * loss.
    * @param  {Boolean} isWinner    - Boolean if user won.
    * @param  {Number}  endPosition - Number representing the ending position
    *                                 of the ball.
