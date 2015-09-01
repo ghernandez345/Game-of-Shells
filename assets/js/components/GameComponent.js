@@ -78,7 +78,7 @@ class GameComponent extends React.Component {
 
       // Clear out the interval when we have gone through
       // all the moves. We also set the ball position to the position
-      // of cup 0.
+      // of cup 0 from the last move.
       shuffleCount++;
       if (shuffleCount === moves.length) {
         this.setState({
