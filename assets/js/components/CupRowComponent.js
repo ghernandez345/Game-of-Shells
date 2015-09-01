@@ -16,11 +16,16 @@ class CupRowComponent extends React.Component {
     );
   }
 
-  
+
   mapCupOrder (cupOrder) {
-    return cupOrder.map((cup, i) => {
+    return cupOrder.map((order, i) => {
       return (
-        <CupComponent order={cup} key={cup} />
+        <CupComponent
+          isUp={!this.props.gameInProgress}
+          order={order}
+          cup={i}
+          endGame={this.props.endGame}
+          key={i} />
       );
     });
   }
