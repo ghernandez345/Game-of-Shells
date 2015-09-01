@@ -4,28 +4,36 @@
 
 import React from 'react';
 import CupComponent from './CupComponent';
+import BallComponent from './BallComponent';
 
 
 class CupRowComponent extends React.Component {
 
   render () {
+    // conditionally render ball component
+    let ball;
+    if (this.props.ballPosition) {
+      ball = <BallComponent position={this.props.ballPosition} />
+    }
+
     return (
       <div className="cup-row">
-        {this.mapCupOrder(this.props.cupOrder)}
+        {this.mapCupPositions(this.props.cupPositions)}
+        {ball}
       </div>
     );
   }
 
 
-  mapCupOrder (cupOrder) {
-    return cupOrder.map((order, i) => {
+  mapCupPositions (cupPositions) {
+    return cupPositions.map((position, cup) => {
       return (
         <CupComponent
           isUp={!this.props.gameInProgress}
-          order={order}
-          cup={i}
+          position={position}
+          cup={cup}
           endGame={this.props.endGame}
-          key={i} />
+          key={cup} />
       );
     });
   }

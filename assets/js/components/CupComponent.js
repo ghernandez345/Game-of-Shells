@@ -14,8 +14,8 @@ class CupComponent extends React.Component {
   }
 
   handleClick () {
-    let isWinner = this.props.cup === 0
-    this.props.endGame(isWinner);
+    let isWinner = this.props.cup === 0;
+    this.props.endGame(isWinner, this.props.position);
   }
 
 
@@ -23,13 +23,13 @@ class CupComponent extends React.Component {
 
     // generate class string for component
     let classes = 'cup-component';
-    classes += ' position-' + this.props.order;
+    classes += ' position-' + this.props.position;
     classes += this.props.isUp ? ' up' : ' down';
 
 
     return (
       <div className={classes} onClick={this.handleClick}>
-        <h1>cup</h1>
+        <h1>cup {this.props.cup}</h1>
       </div>
     );
   }

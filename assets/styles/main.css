@@ -11,6 +11,10 @@
 .cup-component {
   border: 2px solid black;
   position: absolute;
+  background-color: red;
+  width: 100px;
+  text-align: center;
+  /*z-index: 100;*/
 
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -28,17 +32,28 @@
   top: 0;
 }
 
+.ball {
+  position: absolute;
+  top: 40px;
+  width: 100px;
+  text-align: center;
+
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.position-0 {
+  display: none;
+}
+
 .position-1 {
   left: 0;
-  background-color: red;
 }
 
 .position-2 {
   left: 50%;
-  background-color: red;
 }
 
 .position-3 {
   left: 100%;
-  background-color: red;
 }

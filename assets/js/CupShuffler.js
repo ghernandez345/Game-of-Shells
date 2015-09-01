@@ -61,7 +61,7 @@ class CupShuffler extends Object {
     arrayUtils.swapElements(this.cupPositions, shuffledIndexes[0], shuffledIndexes[1]);
   }
 
-  getInitialCupOrder () {
+  getInitialCupPositions () {
     return [1, 2, 3];
   }
 
