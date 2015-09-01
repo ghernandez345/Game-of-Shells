@@ -12,7 +12,7 @@ class BallComponent extends React.Component {
     classes += ' position-' + this.props.position;
     return (
       <div className={classes}>
-        <h3>ball</h3>
+        <img src="assets/images/ball.png" />
       </div>
     )
   }

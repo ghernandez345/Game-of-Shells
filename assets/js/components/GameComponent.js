@@ -90,6 +90,11 @@ class GameComponent extends React.Component {
     }, SHUFFLE_TIMER);
   }
 
+  /**
+   * Update the ballposition after a delay. This delay is to allow the
+   * animation to compelete.
+   * @param  {Number} position - Position of where to place the ball.
+   */
   updateBallPosition (position) {
     setTimeout(() => {
       this.setState({
@@ -114,9 +119,6 @@ class GameComponent extends React.Component {
     this.setState(endGameState);
   }
 
-  onEndShuffling () {
-
-  }
 
   render () {
     return (

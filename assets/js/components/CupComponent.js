@@ -1,5 +1,6 @@
 /**
- * Cup component is an individual cup for the game
+ * Cup component is an individual cup for the game. It can render in a variety
+ * of locations based on its properties.
  */
 
 
@@ -29,7 +30,7 @@ class CupComponent extends React.Component {
 
     return (
       <div className={classes} onClick={this.handleClick}>
-        <h1>cup {this.props.cup}</h1>
+        <img src="assets/images/shell.png" />
       </div>
     );
   }
