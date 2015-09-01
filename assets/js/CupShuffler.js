@@ -55,7 +55,9 @@ class CupShuffler extends Object {
   }
 
   /**
-   * Will shuffle two random cups.
+   * Will shuffle two random cups. Does by shuffling an array that
+   * represents the default cup positions and taking the first two items. This
+   * will essentially give us two random cup positions that we can swap.
    */
   swapRandomCups () {
     let shuffledIndexes = arrayUtils.shuffle(clone(CUP_INDEXES));
