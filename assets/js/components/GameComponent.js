@@ -10,8 +10,8 @@ import CupRowComponent from './CupRowComponent';
 import MessageComponent from './MessageComponent';
 
 
-// The time between each shuffle.
-const SHUFFLE_TIMER = 400;
+// game timers.
+const SHUFFLE_TIMER = 350;
 const GAME_START_DELAY = 800;
 
 // We will use this instance to generate our game moves.

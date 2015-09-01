@@ -37,7 +37,7 @@ button:hover {
   margin: 100px auto;
   height: 500px;
   position: relative;
-  width: 800px;
+  width: 600px;
 }
 
 .cup-component {
@@ -93,9 +93,9 @@ button:hover {
 }
 
 .position-2 {
-  left: 325px;
+  left: 225px;
 }
 
 .position-3 {
-  left: 725px;
+  left: 525px;
 }

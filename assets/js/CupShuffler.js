@@ -4,6 +4,7 @@
  */
 
 import * as arrayUtils from './utils/arrayUtils';
+import randomNum from './utils/randomNumber';
 import clone from 'clone';
 
 // Set constants for number of possible cup swap and cup element indexes
@@ -44,7 +45,7 @@ class CupShuffler extends Object {
   shuffleCups () {
 
     let shuffledMoves = [];
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < randomNum(15, 25); i++) {
       this.swapRandomCups();
       shuffledMoves.push(clone(this.cupPositions));
     }
