@@ -69,22 +69,22 @@ class GameComponent extends React.Component {
    * @param  {Array} moves - Array of the suffling moves.
    */
   shuffleCups (moves) {
-    let stepCount = 0;
+    let shuffleCount = 0;
     let gameTimer = setInterval(() => {
 
       this.setState({
-        cupPositions: moves[stepCount]
+        cupPositions: moves[shuffleCount]
       });
 
       // Clear out the interval when we have gone through
       // all the moves. We also set the ball position to the position
       // of cup 0.
-      stepCount++;
-      if (stepCount === moves.length) {
+      shuffleCount++;
+      if (shuffleCount === moves.length) {
         this.setState({
           gameMessage: GameMessages.endShuffle
         });
-        this.updateBallPosition(moves[stepCount - 1][0])
+        this.updateBallPosition(moves[shuffleCount - 1][0])
         clearInterval(gameTimer);
       }
 
