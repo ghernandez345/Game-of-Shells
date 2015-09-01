@@ -62,6 +62,10 @@ class CupShuffler extends Object {
     arrayUtils.swapElements(this.cupPositions, shuffledIndexes[0], shuffledIndexes[1]);
   }
 
+  /**
+   * Returns the initial positions of the cups.
+   * @return {Array} - The init positions of cups.
+   */
   getInitialCupPositions () {
     return [1, 2, 3];
   }

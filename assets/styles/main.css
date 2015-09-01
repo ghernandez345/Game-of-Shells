@@ -83,11 +83,6 @@ button:hover {
   height: 90px;
 }
 
-/* position-0  will not be rendered */
-.position-0 {
-  display: none;
-}
-
 .position-1 {
   left: -75px;
 }

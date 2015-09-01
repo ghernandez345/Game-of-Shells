@@ -10,7 +10,8 @@ import BallComponent from './BallComponent';
 class CupRowComponent extends React.Component {
 
   render () {
-    // conditionally render ball component
+
+    // conditionally render the ball component if we have a position
     let ball;
     if (this.props.ballPosition) {
       ball = <BallComponent position={this.props.ballPosition} />
