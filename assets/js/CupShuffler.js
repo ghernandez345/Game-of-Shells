@@ -16,7 +16,7 @@ class CupShuffler extends Object {
 
   constructor () {
     super();
-    this.cups = [1, 2, 3];
+    this.cupPositions = [1, 2, 3];
   }
 
   /**
@@ -30,21 +30,23 @@ class CupShuffler extends Object {
    * @param  {Function} callback - callback called with data of the games moves.
    */
   startNewGame (callback) {
-    this.cups = [1, 2, 3];
+    this.cupPositions = [1, 2, 3];
     let moves = this.shuffleCups();
     callback(moves);
   }
 
   /**
    * Does a series of shuffles and builds an array of the moves that occured.
-   * @return {Array} - Array of the shuffle moves that occcured.
+   * @return {Array} - Array of the shuffle moves that occcured. Each 'move' is
+   *                   a snapshop of the cups positions when two cups swap.
+   *                   This means the array that is returned is a 2D array.
    */
   shuffleCups () {
 
     let shuffledMoves = [];
     for (var i = 0; i < 10; i++) {
       this.swapRandomCups();
-      shuffledMoves.push(clone(this.cups));
+      shuffledMoves.push(clone(this.cupPositions));
     }
 
     // Run callback passing shuffled moves.
@@ -52,11 +54,11 @@ class CupShuffler extends Object {
   }
 
   /**
-   * Will shuffle the two random cups.
+   * Will shuffle two random cups.
    */
   swapRandomCups () {
     let shuffledIndexes = arrayUtils.shuffle(clone(CUP_INDEXES));
-    arrayUtils.swapElements(this.cups, shuffledIndexes[0], shuffledIndexes[1]);
+    arrayUtils.swapElements(this.cupPositions, shuffledIndexes[0], shuffledIndexes[1]);
   }
 
 };

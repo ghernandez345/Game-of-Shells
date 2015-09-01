@@ -10,7 +10,9 @@ class CupComponent extends React.Component {
 
   render() {
     return (
-      <h1>cup</h1>
+      <div className="">
+        <h1>cup</h1>
+      </div>
     );
   }
 }
