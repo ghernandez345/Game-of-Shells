@@ -21,15 +21,8 @@ button {
 
 button:hover {
   cursor: pointer;
-}
-
-button:hover {
   background: #3cb0fd;
   text-decoration: none;
-}
-
-button:active {
-
 }
 
 .message {
@@ -90,6 +83,7 @@ button:active {
   height: 90px;
 }
 
+/* position-0  will not be rendered */
 .position-0 {
   display: none;
 }
