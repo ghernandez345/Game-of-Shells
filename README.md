@@ -8,7 +8,7 @@ to run simply open `index.html` in the browser
 to develop make sure you have node and npm and run `npm install` followed by
 `npm start`.
 
-## notable Tech Used
+## Notable Tech Used
 - react
 - babel (ES6)
 - browserify
